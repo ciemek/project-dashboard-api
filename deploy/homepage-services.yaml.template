@@ -1,0 +1,120 @@
+---
+# Homepage services.yaml — deploy to Unraid via rclone copyto
+# Replace <OPENROUTER_KEY> with actual OpenRouter API key before deploying
+
+- Server monitoring:
+  - CPU usage:
+      widget:
+        type: glances
+        url: http://192.168.40.87:61208
+        version: 4
+        metric: cpu
+        diskUnits: bytes
+        refreshInterval: 5000
+        pointsLimit: 50
+  - CPU temp:
+      widget:
+        type: glances
+        url: http://192.168.40.87:61208
+        version: 4
+        metric: sensor:Package id 0
+        diskUnits: bytes
+        refreshInterval: 5000
+        pointsLimit: 50
+
+- STRUCTURA Projects:
+  - STRUCTURA Core:
+      icon: mdi-clipboard-list-outline
+      description: Modular AI agent platform — Pantheon, Hindsight, client isolation
+      href: http://192.168.40.7:8889/projects/structura-core/view
+      widget:
+        type: customapi
+        url: http://192.168.40.7:8889/projects/structura-core
+        method: GET
+        mappings:
+          - field: data.status
+            label: Status
+            format: text
+          - field: data.progress
+            label: Progress
+            format: percent
+          - field: data.owner
+            label: Owner
+            format: text
+        refreshInterval: 300000
+  - Project Dashboard:
+      icon: mdi-view-dashboard-outline
+      description: Real-time project tracking via Hindsight → Homepage widgets
+      href: http://192.168.40.7:8889/projects/project-dashboard/view
+      widget:
+        type: customapi
+        url: http://192.168.40.7:8889/projects/project-dashboard
+        method: GET
+        mappings:
+          - field: data.status
+            label: Status
+            format: text
+          - field: data.progress
+            label: Progress
+            format: percent
+          - field: data.owner
+            label: Owner
+            format: text
+        refreshInterval: 300000
+  - Hindsight Memory:
+      icon: mdi-brain
+      description: Knowledge & memory — entities, directives, recall
+      href: http://10.100.100.9:8888/docs
+      widget:
+        type: customapi
+        url: http://192.168.40.7:8889/projects/hindsight-memory
+        method: GET
+        mappings:
+          - field: data.status
+            label: Status
+            format: text
+          - field: data.progress
+            label: Progress
+            format: percent
+          - field: data.owner
+            label: Owner
+            format: text
+        refreshInterval: 300000
+  - PiP Agent:
+      icon: mdi-robot-outline
+      description: AI household orchestrator — Pantheon, routines, automation
+      href: http://192.168.40.7:8889/projects/pip-agent/view
+      widget:
+        type: customapi
+        url: http://192.168.40.7:8889/projects/pip-agent
+        method: GET
+        mappings:
+          - field: data.status
+            label: Status
+            format: text
+          - field: data.progress
+            label: Progress
+            format: percent
+          - field: data.owner
+            label: Owner
+            format: text
+        refreshInterval: 300000
+  - Domovoi Module:
+      icon: mdi-home-automation
+      description: Home automation — HA, family logistics, smart home
+      href: http://192.168.40.7:8889/projects/domovoi-module/view
+      widget:
+        type: customapi
+        url: http://192.168.40.7:8889/projects/domovoi-module
+        method: GET
+        mappings:
+          - field: data.status
+            label: Status
+            format: text
+          - field: data.progress
+            label: Progress
+            format: percent
+          - field: data.owner
+            label: Owner
+            format: text
+        refreshInterval: 300000
