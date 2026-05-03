@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  project-dashboard-api:
+    build: .
+    image: ciemek/project-dashboard-api:latest
+    container_name: structura-dashboard-api
+    ports:
+      - "8889:8889"
+    environment:
+      - TZ=Europe/Warsaw
+      - PORT=8889
+      - WORKERS=1
+      - THREADS=2
+    restart: unless-stopped
+    network_mode: host
