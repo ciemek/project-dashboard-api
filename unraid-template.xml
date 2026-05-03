@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>structura-dashboard-api</Name>
+  <Repository>ghcr.io/ciemek/project-dashboard-api:latest</Repository>
+  <Registry>https://github.com/ciemek/project-dashboard-api</Registry>
+  <Network>host</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ciemek/project-dashboard-api/issues</Support>
+  <Project>https://github.com/ciemek/project-dashboard-api</Project>
+  <Overview>STRUCTURA Project Dashboard API - Flask middleware for Homepage widgets and Hindsight memory integration.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:8889/health</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/ciemek/project-dashboard-api/main/unraid-template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/python.png</Icon>
+  <Config Name="Port" Target="" Default="8889" Mode="" Description="API port" Type="Variable" Display="always-hide" Required="true" Mask="false">8889</Config>
+  <Config Name="Timezone" Target="" Default="Europe/Warsaw" Mode="" Description="Timezone" Type="Variable" Display="always-hide" Required="false" Mask="false">Europe/Warsaw</Config>
+</Container>
